@@ -1,0 +1,11 @@
+main{
+    height: 60vh;
+ 
+}
+.building{
+    margin: 0 auto ;
+    text-align: center;
+} 
+.building > h2{
+    font-weight: 1000;
+}
