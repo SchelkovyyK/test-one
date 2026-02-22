@@ -14,17 +14,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages   # обов'язково для нових версій deploy-pages
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true   # створює Pages, якщо ще не активовано
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  
+          path: ./          # деплой з кореня репозиторію
 
       - name: Deploy to GitHub Pages
         id: deployment
